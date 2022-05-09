@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Your appointments</title>
+<link href="css/style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+	<div class="top">
+		<div>Contact Us +91 98878 26001/ 01 | ddmh@hospital.com</div>
+	</div>
+	<div class="logo">
+		<div>
+			<table>
+				<tr>
+					<td width="600px" style="font-size: 50px; font-family: forte;">
+						<font color="#blue"> DDM </font> <font color="#000">
+							Hospital</font>
+					</td>
+					<td><br> <br> <font size="3px"> <a
+							th:href="@{/}">Home</a> <a th:href="@{/}">Services</a> <a
+							th:href="@{/about}">About</a> <a th:href="@{/doctor}">
+								Doctor</a> <a th:href="@{/login}">Log In</a>
+
+
+
+
+
+					</font></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div class="middle">
+
+		<div align="center">
+
+			<table style="width: 100%">
+				<caption>Your appointments</caption>
+				<tr>
+					<th>AppointmentID</th>
+					<th>Patient Name</th>
+					<th>Mobile_No</th>
+					<th> Date</th>
+					<th>confirmed</th>
+
+				</tr>
+				<tr th:each="appointment : ${listAppointments}">
+					<td th:text="${appointment.appointment_id}"></td>
+					<td th:text="${appointment.patientName}"></td>
+					<td th:text="${appointment.mobile_No}"></td>
+					<td th:text="${appointment.date}"></td>
+					<td th:text="${appointment.confirmed}"></td>
+					<td><a th:href="@{'/confirm/'+${appointment.id}}"></a>confirm
+						&nbsp;&nbsp;&nbsp; 
+						
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div class="bottom">
+		<div>
+			<font style="font-size: 20px; font-family: forte;"> <marquee
+					behavior="scroll" direction="left">
+					<font color="gray"> WASH HAND,USE SANITIZE ,</font><font
+						color="red">WEAR MASK, STAY HOME,STAY SAFE,</font><font
+						color="green"> KEEP SOCIAL DISTANCE, AVOID UNWANDED
+						MEETINGS!!!!!</font>
+				</marquee>
+			</font>
+		</div>
+	</div>
+</body>
+</html>

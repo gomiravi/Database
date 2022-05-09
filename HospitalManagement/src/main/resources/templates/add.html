@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>new appointment</title>
+<link href="css/style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+	<div class="top">
+		<div>Contact Us +91 98878 26001/ 01 | ddmh@hospital.com</div>
+	</div>
+	<div class="logo">
+		<div>
+			<table>
+				<tr>
+					<td width="600px" style="font-size: 50px; font-family: forte;">
+						<font color="#428bca"> DDM </font> <font color="#000">
+							Hospital</font>
+					</td>
+					<td><br> <br> <font size="3px"> <a
+							th:href="@{/}">Home</a> <a th:href="@{/doctor}">Services</a> <a
+							th:href="@{/about}">About</a> <a th:href="@{/doctor}">
+								Doctor</a> <a th:href="@{/login}">Log In</a>
+					</font></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div class="middle">
+
+		<p>
+		<div align="center">
+			<h1>Create New Appointment</h1>
+			<br />
+			<form action="#"th:action="@{/save}" th:object="${appointment}"
+method="post">
+				Make an Appointment
+
+				<table>
+				<tr>
+<td>Patient Name:</td>
+<td><input type="text" th:field="*{patientName}"/></td>
+</tr>
+					
+					<tr>
+						<td>Mobile No:</td>
+						<td><input type="text" th:field="*{mobile_No}">
+					</tr>
+					
+					<tr>
+						<td>Date:</td>
+						<td><input type="text"  th:field="*{date}"></td>
+					</tr>
+					
+
+					<tr>
+					<tr>
+						<td colspan="2"><button type="submit">Save</button></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<br> <br>
+
+	</div>
+
+
+	<div class="bottom">
+		<div>
+			<font style="font-size: 20px; font-family: forte;"> <marquee
+					behavior="scroll" direction="left">
+					<font color="gray"> WASH HAND,USE SANITIZE ,</font><font
+						color="red">WEAR MASK, STAY HOME,STAY SAFE,</font><font
+						color="green"> KEEP SOCIAL DISTANCE, AVOID UNWANDED
+						MEETINGS!!!!!</font>
+				</marquee>
+			</font>
+		</div>
+	</div>
+
+</body>
+</html>
